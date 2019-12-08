@@ -1,4 +1,4 @@
-describe('Home', function () {
+describe('List', function () {
 
   beforeEach(function () {
     browser.get('/');

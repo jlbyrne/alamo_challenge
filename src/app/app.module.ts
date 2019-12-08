@@ -4,8 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { ListComponent } from './list/list.component';
+import { FilmComponent } from './film/film.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
@@ -16,12 +16,12 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent
+    ListComponent,
+    FilmComponent
   ],
   providers: [
     ApiService

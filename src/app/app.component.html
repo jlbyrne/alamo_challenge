@@ -5,13 +5,15 @@
   </nav>
 </header>
 <main>
-  <h1>Hello from {{title}}!</h1>
+  <div class="hero">
+    <div class="hero-gradient"></div>
+    <div class="hero-images">
+      <img class="hero-welcome" src="/img/welcome_to.svg" alt="Welcome To">
+      <img class="hero-logo" src="/img/logo.svg" alt="Alamo Drafthouse Cinema">
+    </div>
+  </div>
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/angular.png">
-
-  <router-outlet></router-outlet>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
 </main>
-<footer>
-  <a [href]="url">Webpack Angular 2 Starter</a>
-</footer>

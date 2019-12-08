@@ -1,14 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
+import { FilmComponent } from './film.component';
 
-describe('About Component', () => {
+describe('Film Component', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [AboutComponent]});
+    TestBed.configureTestingModule({declarations: [FilmComponent]});
   });
 
   it('should ...', () => {
-    const fixture = TestBed.createComponent(AboutComponent);
+    const fixture = TestBed.createComponent(FilmComponent);
     fixture.detectChanges();
     expect(fixture.nativeElement.children[0].textContent).toContain('About Works!');
   });

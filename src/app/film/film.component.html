@@ -1,3 +1,10 @@
-<p>
-  About Works!
-</p>
+<a [routerLink]="['/']">Back</a>
+<h1>{{film.title}}</h1>
+<h2>{{film.headline}}</h2>
+<div class="film-details">
+  <span class="series">{{film.seriesName}}</span>
+  <span class="rating">Rated {{film.rating}}</span>
+</div>
+<div class="hero-image">
+  <img src="{{film.landscapeHeroImage}}" alt="{{film.title}}">
+</div>

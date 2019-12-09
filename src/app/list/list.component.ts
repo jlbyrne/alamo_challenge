@@ -3,29 +3,31 @@ import { ApiService } from '../shared/api.service';
 
 
 @Component({
-  selector: 'my-home',
+  selector: 'cinema-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  cinemas: any[];
+  selectedCinema: object;
+  selectedCinemaFilms: any[];
+  
+  constructor(private apiService: ApiService) {}
 
-  constructor(apiService: ApiService) {
-    apiService.getCinemas()
+  ngOnInit() {
+    this.apiService.getCinemas()
       .subscribe(
-        data => console.log(data),
-        error => console.error('Error: ' + error),
-        () => console.log('Completed!')
-      );
-
-    apiService.getFilmsForCinema('0002')
-      .subscribe(
-        data => console.log(data),
+        data => this.cinemas = data,
         error => console.error('Error: ' + error)
       );
   }
 
-  ngOnInit() {
-    console.log('Hello Home');
+  selectCinema(cinema: object) {
+    this.selectedCinema = cinema;
+    this.apiService.getFilmsForCinema(cinema.id)
+      .subscribe(
+        data => this.selectedCinemaFilms = data,
+        error => console.error('Error: ' + error)
+      );
   }
-
 }

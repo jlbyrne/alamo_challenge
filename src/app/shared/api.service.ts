@@ -28,11 +28,13 @@ export class ApiService {
       })
   }
 
-  getFilmDetails(filmHeadOfficeCode) {
+  getFilmDetails(filmSlug) {
     return this.http.get('https://drafthouse.com/s/mother/v1/page/market/main/austin')
       .map(response => {
         const data = response.json().data;
-        return data.films.filter(film => film.headOfficeCode == filmHeadOfficeCode);
+        console.log(data)
+        console.log(data.films.filter(film => film.slug == filmSlug)[0])
+        return data.films.filter(film => film.slug == filmSlug)[0];
       })
   }
 }

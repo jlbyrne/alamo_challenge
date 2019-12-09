@@ -1,2 +1,12 @@
 <h1>Find a Movie</h1>
+<h2>Select Theater</h2>
+<button *ngFor="let c of cinemas" (click)="selectCinema(c)">{{c.name}}</button>
 
+<div class="film-list" *ngIf="selectedCinema">
+  <div class="film-link" *ngFor="let film of selectedCinemaFilms" [routerLink]="['/show', film.filmSlug]">
+    <span class="name">{{film.filmName}}</span>
+    <span class="cart">
+      <img src="/img/cart.svg" alt="cart icon">
+    </span>
+  </div>
+</div>

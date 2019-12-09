@@ -5,7 +5,7 @@ import { FilmComponent } from './film/film.component';
 
 const routes: Routes = [
   { path: '', component: ListComponent },
-  { path: 'about', component: FilmComponent}
+  { path: 'show/:filmSlug', component: FilmComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes);
